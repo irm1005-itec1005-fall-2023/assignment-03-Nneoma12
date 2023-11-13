@@ -94,7 +94,6 @@ todoItems.push(toDoItem);
 console.log(todoItems);
 }
 
-
 //  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 
 
@@ -111,9 +110,20 @@ function removeToDoItem(todoId) {
     }
   }
   console.log(todoItems);
-
-  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  try {
+    if (todoItems.length === 0) {
+      throw "Error";
+    }
+  }
+  catch (err) {
+    console.log("Error: No items in the array");
+  }
+  finally {
+    console.log("Finally: This will always run");
+  }
 }
+  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+
 
 // Function to mark a task as completed
 // It should accept a number as a parameter (id of the todo item)
@@ -128,9 +138,11 @@ function markToDoItemAsCompleted(todoId) {
     }
   }
   console.log(todoItems);
-
- // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 }
+ // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+
+
+
 
 // Function to delete a task from the array
 // It should accept a number as a parameter (id of the todo item)
@@ -144,11 +156,19 @@ function deleteToDoItem(todoId) {
     if (todoItems[i].id === todoId) {
       todoItems.splice(i, 1);
     }
-  }
-  console.log(todoItems);
-
-  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 }
+console.log(todoItems);
+if (isNaN(todoId)) {
+  console.log("Error: todoId is not a number");
+  return false;
+}
+else {
+  console.log("todoId is a number");
+  return true;
+}
+}
+  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+
 
 // Function to clear all completed tasks
 // Loop through the array of todos, and when you find a todo item that is marked
@@ -161,9 +181,9 @@ function clearCompletedTasks() {
     }
   }
   console.log(todoItems);
-
-  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 }
+  // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+
 
 // You can write your own tests here if you would like to test
 // your code before using the automated tests
