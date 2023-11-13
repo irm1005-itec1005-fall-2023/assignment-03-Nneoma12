@@ -109,7 +109,6 @@ function removeToDoItem(todoId) {
       todoItems.splice(i, 1);
     }
   }
-  console.log(todoItems);
   try {
     if (todoItems.length === 0) {
       throw "Error";
@@ -119,7 +118,7 @@ function removeToDoItem(todoId) {
     console.log("Error: No items in the array");
   }
   finally {
-    console.log("Finally: This will always run");
+    console.log(todoItems);
   }
 }
   // console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
