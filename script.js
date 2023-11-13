@@ -109,7 +109,6 @@ function removeToDoItem(todoId) {
     if (todoItems[i].id === todoId) {
       todoItems.splice(i, 1);
     }
-    else(print("Error"));
   }
   console.log(todoItems);
 
